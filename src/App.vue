@@ -1,10 +1,10 @@
 <template>
   <Header />
   <div class="container">
-    <Balance :total="total" />
+    <Balance :total="+total" />
     <IncomeExpenses :income="+income" :expenses="+expenses" />
     <TransactionList :transactions="transactions" />
-    <AddTransaction />
+    <AddTransaction @transaction-submiited="handleTransactionSubmiited" />
   </div>
 </template>
 
@@ -50,4 +50,13 @@ const expenses = computed(() => {
     }, 0)
     .toFixed(2);
 });
+
+// Add transaction
+const handleTransactionSubmiited = (transactionData) => {
+  transactions.value.push({
+    id: generateUniqueId(),
+    text: transactionData.text,
+    amount: transactionData.amount,
+  });
+};
 </script>

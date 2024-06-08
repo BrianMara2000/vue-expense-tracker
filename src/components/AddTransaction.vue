@@ -29,7 +29,7 @@ const text = ref("");
 const amount = ref("");
 const toast = useToast();
 
-const emit = defineEmits(["transactionSubmiited"]);
+const emit = defineEmits(["transactionSubmitted"]);
 
 const handleSubmit = () => {
   if (!text.value || !amount.value) {
@@ -42,7 +42,7 @@ const handleSubmit = () => {
     amount: parseFloat(amount.value),
   };
 
-  emit("transactionSubmiited", transactionData);
+  emit("transactionSubmitted", transactionData);
 
   text.value = "";
   amount.value = "";

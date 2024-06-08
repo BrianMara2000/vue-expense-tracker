@@ -5,7 +5,7 @@
       <p id="money-plus" class="money plus">+$0.00</p>
     </div>
     <div>
-      <h1>Expense</h1>
+      <h4>Expense</h4>
       <p id="money-minus" class="money minus">-$0.00</p>
     </div>
   </div>
